@@ -37,12 +37,12 @@ export default function Hero() {
           <div data-aos="fade-up" className="absolute bottom-0 w-[600px] h-[300px] bg-[#F9B17A] rounded-t-full -z-0"></div>
     
           {/* Portrait Image */}
-          <div data-aos="fade-up"  className="relative z-10 w-[500px] h-[600px]">
+          <div data-aos="fade-up"  className="relative z-10 w-[600px] right-10 h-[600px]">
             <Image 
-              src="/images/chairman1.png" // Replace with your image path
+              src="/images/1.png" // Replace with your image path
               alt="Jenny Portfolio"
               fill
-              className="object-contain"
+              className="object-contain "
               priority
             />
           </div>

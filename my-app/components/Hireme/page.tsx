@@ -23,7 +23,7 @@ export default function WhyHireMe() {
         >
           <div className="bg-[#F9B17A] w-[350px] h-[450px] rounded-[100px] relative overflow-hidden">
             <Image 
-              src="/images/chairman1.png" 
+              src="/images/1.png" 
               alt="Profile" 
               fill 
               className="object-cover object-top pt-10"
