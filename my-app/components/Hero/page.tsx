@@ -39,7 +39,7 @@ export default function Hero() {
           {/* Portrait Image */}
           <div data-aos="fade-up"  className="relative z-10 w-[600px] right-10 h-[600px]">
             <Image 
-              src="/images/1.png" // Replace with your image path
+              src="/images/chairman1.png" // Replace with your image path
               alt="Jenny Portfolio"
               fill
               className="object-contain "
