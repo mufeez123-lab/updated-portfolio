@@ -1,3 +1,9 @@
+"use client"
+import { useEffect } from "react"
+import AOS from "aos";
+import "aos/dist/aos.css"
+
+
 const workHistory = [
   {
     company: "Sky Diamonds, Dubai(Remote)",
@@ -30,10 +36,18 @@ const workHistory = [
   }
 ];
 
+
 export default function WorkExperience() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true
+    })
+  }, [])
+
   return (
-    <div id="about" className=" bg-white py-24 px-6 relative font-sans">
-      <h2 className="text-5xl font-bold text-black text-center mb-24">
+    <div id="about" className="bg-white py-24 px-6 relative font-sans">
+      <h2 data-aos="fade-up" className="text-5xl font-bold text-black text-center mb-24">
         My <span className="text-[#F17B3C]">Work Experience</span>
       </h2>
 
@@ -43,9 +57,15 @@ export default function WorkExperience() {
 
         <div className="space-y-24">
           {workHistory.map((item, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start relative">
+            <div 
+              key={index} 
+              // Added AOS attributes here to animate the entire row
+              data-aos="fade-up" 
+              data-aos-delay={index * 100} // Staggers each line by 200ms
+              className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start relative"
+            >
               
-              {/* Left Side */}
+              {/* Left Side: Company & Period */}
               <div className="md:text-right md:pr-16">
                 <h3 className="text-3xl font-bold text-[#1D2939]">{item.company}</h3>
                 <p className="text-gray-400 mt-2 font-medium">{item.period}</p>
@@ -54,15 +74,18 @@ export default function WorkExperience() {
               {/* Center Dot */}
               <div className="absolute left-1/2 -translate-x-1/2 top-1 z-10 hidden md:block">
                 <div className={`w-8 h-8 rounded-full border-4 border-white shadow-lg ${item.dotColor} relative flex items-center justify-center`}>
-                  {/* Decorative outer dash ring */}
                   <div className="absolute w-12 h-12 rounded-full border border-dashed border-gray-300" />
                 </div>
               </div>
 
-              {/* Right Side */}
+              {/* Right Side: Role & Description */}
               <div className="md:pl-16">
                 <h4 className="text-3xl font-bold text-[#1D2939]">{item.role}</h4>
-                {item.description && <p className="text-gray-500 mt-4 leading-relaxed max-w-sm">{item.description}</p>}
+                {item.description && (
+                  <p className="text-gray-500 mt-4 leading-relaxed max-w-sm">
+                    {item.description}
+                  </p>
+                )}
               </div>
             </div>
           ))}
