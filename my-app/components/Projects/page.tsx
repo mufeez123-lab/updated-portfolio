@@ -2,10 +2,9 @@
 import Image from "next/image";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { useEffect } from "react"
+import { useEffect, useState, useCallback } from "react"
 import AOS from "aos";
 import "aos/dist/aos.css"
-
 
 const portfolioItems = [
   { id: 1, title: "Hindustan Builders", image: "/images/ss1.png" },
@@ -16,40 +15,59 @@ const portfolioItems = [
 ];  
 
 export default function PortfolioCarousel() {
-    useEffect(() => { 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => { 
     AOS.init({
-      duration: 1500,   // animation duration
-      once: true        // animation happens only once
+      duration: 1500,
+      once: true
     })
   }, [])
-  // Initialize Embla with Autoplay
-  const [emblaRef] = useEmblaCarousel({ 
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true, 
     align: 'start',
     skipSnaps: false 
   }, [
-    Autoplay({ delay: 2000, stopOnInteraction: false })
+    Autoplay({ delay: 3000, stopOnInteraction: false })
   ]);
 
+  // Update dots when slide changes
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on('select', onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
+
   return (
-    <section id='projects' className="py-24 px-6 md:px-20  max-w-[150vh] mx-auto font-sans">
-      {/* Header with See All Button */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
-        <h2 data-aos="fade-up" className="text-5xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
+    <section id='projects' className="py-16 md:py-24 px-4 md:px-10 lg:px-20 max-w-7xl mx-auto font-sans overflow-hidden">
+      
+      {/* Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-16 gap-6">
+        <h2 data-aos="fade-up" className="text-4xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
           Lets have a look at <br /> my <span className="text-[#F17B3C]"> Recent Projects</span>
         </h2>
-
       </div>
 
       {/* Auto-Sliding Viewport */}
-      <div data-aos="fade-up" data-aos-delay="200" className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-        <div className="flex gap-8">
+      <div 
+        data-aos="fade-up" 
+        data-aos-delay="200" 
+        className="overflow-visible md:overflow-hidden cursor-grab active:cursor-grabbing" 
+        ref={emblaRef}
+      >
+        <div className="flex gap-4 md:gap-8">
           {portfolioItems.map((item) => (
             <div 
               key={item.id} 
-              className="flex-[0_0_100%] md:flex-[0_0_85%] min-w-0"
+              className="flex-[0_0_90%] md:flex-[0_0_85%] lg:flex-[0_0_75%] min-w-0"
             >
-              <div className="relative h-[400px] md:h-[550px]  rounded-[40px] overflow-hidden shadow-2xl group">
+              <div className="relative h-[350px] md:h-[550px] rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl group">
                 {/* Portfolio Image */}
                 <Image 
                   src={item.image} 
@@ -58,25 +76,29 @@ export default function PortfolioCarousel() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 
-                {/* Branding Text Over Image */}
-                <div className="absolute bottom-12 left-12 text-white text-6xl md:text-8xl font-bold drop-shadow-2xl opacity-90">
+                {/* Overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
+
+                {/* Branding Text Over Image - Responsive Text sizes */}
+                <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold drop-shadow-2xl group-hover:text-[#F17B3C] transition-colors duration-300">
                   {item.title}
                 </div>
-
-                {/* Optional: Hover Overlay */}
-                {/* <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors duration-300" /> */}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Custom Pagination Dots */}
-      <div className="flex justify-center gap-3 mt-12">
-        <div className="w-12 h-2.5 bg-[#F17B3C] rounded-full transition-all" />
-        <div className="w-2.5 h-2.5 bg-gray-300 rounded-full" />
-        <div className="w-2.5 h-2.5 bg-gray-300 rounded-full" />
-        <div className="w-2.5 h-2.5 bg-gray-300 rounded-full" />
+      {/* Dynamic Pagination Dots */}
+      <div className="flex justify-center items-center gap-2 mt-10 md:mt-12">
+        {portfolioItems.map((_, index) => (
+          <div 
+            key={index}
+            className={`transition-all duration-300 rounded-full ${
+              index === selectedIndex ? "w-10 md:w-12 h-2 md:h-2.5 bg-[#F17B3C]" : "w-2 md:w-2.5 h-2 md:h-2.5 bg-gray-300"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
