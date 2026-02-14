@@ -1,8 +1,11 @@
 "use client"
-import React from 'react';
 import Image from "next/image";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { useEffect } from "react"
+import AOS from "aos";
+import "aos/dist/aos.css"
+
 
 const portfolioItems = [
   { id: 1, title: "Hindustan Builders", image: "/images/ss1.png" },
@@ -13,6 +16,12 @@ const portfolioItems = [
 ];  
 
 export default function PortfolioCarousel() {
+    useEffect(() => { 
+    AOS.init({
+      duration: 1500,   // animation duration
+      once: true        // animation happens only once
+    })
+  }, [])
   // Initialize Embla with Autoplay
   const [emblaRef] = useEmblaCarousel({ 
     loop: true, 
@@ -26,14 +35,14 @@ export default function PortfolioCarousel() {
     <section id='projects' className="py-24 px-6 md:px-20  max-w-[150vh] mx-auto font-sans">
       {/* Header with See All Button */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
-        <h2 className="text-5xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
+        <h2 data-aos="fade-up" className="text-5xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
           Lets have a look at <br /> my <span className="text-[#F17B3C]"> Recent Projects</span>
         </h2>
 
       </div>
 
       {/* Auto-Sliding Viewport */}
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+      <div data-aos="fade-up" data-aos-delay="200" className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
         <div className="flex gap-8">
           {portfolioItems.map((item) => (
             <div 

@@ -1,8 +1,19 @@
 "use client"
 import Link from 'next/link';
 import { Github, Linkedin, Twitter, Mail, ArrowUp, Phone } from 'lucide-react';
+import { useEffect } from "react"
+import AOS from "aos";
+import "aos/dist/aos.css"
+
 
 export default function Footer() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true
+    })
+  }, [])
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -17,7 +28,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           
           {/* Brand Identity */}
-          <div className="md:col-span-2 space-y-6">
+          <div data-aos="fade-right"  className="md:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
               <div className="bg-[#F17B3C] w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg">
                 MD
@@ -46,7 +57,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
+          <div data-aos="fade-up" className="space-y-6">
             <h4 className="text-xl font-bold font-sans">Quick Links</h4>
             <ul className="space-y-4 text-gray-400 font-montserrat">
               <li><Link href="#home" className="hover:text-[#F17B3C] transition-colors">Home</Link></li>
@@ -57,7 +68,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Trigger */}
-          <div className="space-y-6">
+          <div data-aos="fade-up" className="space-y-6">
             <h4 className="text-xl font-bold font-sans">Let&apos;s Connect</h4>
             <p className="text-gray-400 font-montserrat">Have a project in mind?</p>
             <Link 
@@ -70,10 +81,10 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px w-full bg-white/10 mb-8" />
+        <div  className="h-px w-full bg-white/10 mb-8" />
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500 font-montserrat">
+        <div data-aos="fade-up" className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500 font-montserrat">
           <p>© 2026 Mufeez Dev. All Rights Reserved. </p>
           <button 
             onClick={scrollToTop}
