@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function WhyHireMe() {
   return (
-    <section className="py-20 bg-[#F8F9FB] px-6 md:px-20 mx-8 rounded-[40px] ">
+    <section id='whyhireme' className="py-20 bg-[#F8F9FB] px-6 md:px-20 mx-8 rounded-[40px] ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left: Image with organic shape */}
         <div className="relative flex justify-center">

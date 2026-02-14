@@ -8,7 +8,8 @@ const portfolioItems = [
   { id: 1, title: "Hindustan Builders", image: "/images/ss1.png" },
   { id: 2, title: "Sky Diamond Dreams", image: "/images/ss2.png" },
   { id: 3, title: "Prestige Events", image: "/images/ss3.png" },
-  { id: 4, title: "Badger Scoop", image: "/images/ss4.png" },
+  { id: 4, title: "Badger Scoop", image: "/images/123.png" },
+  { id: 5, title: "Afera Plywood", image: "/images/12345.png" },
 ];  
 
 export default function PortfolioCarousel() {
@@ -22,15 +23,13 @@ export default function PortfolioCarousel() {
   ]);
 
   return (
-    <section className="py-24 px-6 md:px-20 max-w-7xl mx-auto font-sans">
+    <section id='projects' className="py-24 px-6 md:px-20  max-w-[150vh] mx-auto font-sans">
       {/* Header with See All Button */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
         <h2 className="text-5xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
-          Lets have a look at <br /> my <span className="text-[#F17B3C]">Portfolio</span>
+          Lets have a look at <br /> my <span className="text-[#F17B3C]"> Recent Projects</span>
         </h2>
-        <button className="bg-[#F17B3C] text-white px-10 py-4 rounded-full font-bold hover:bg-[#d96a2f] transition-all shadow-lg shadow-orange-200">
-          See All
-        </button>
+
       </div>
 
       {/* Auto-Sliding Viewport */}
@@ -41,7 +40,7 @@ export default function PortfolioCarousel() {
               key={item.id} 
               className="flex-[0_0_100%] md:flex-[0_0_85%] min-w-0"
             >
-              <div className="relative h-[400px] md:h-[550px] bg-gray-100 rounded-[40px] overflow-hidden shadow-2xl group">
+              <div className="relative h-[400px] md:h-[550px]  rounded-[40px] overflow-hidden shadow-2xl group">
                 {/* Portfolio Image */}
                 <Image 
                   src={item.image} 
@@ -56,7 +55,7 @@ export default function PortfolioCarousel() {
                 </div>
 
                 {/* Optional: Hover Overlay */}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                {/* <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors duration-300" /> */}
               </div>
             </div>
           ))}

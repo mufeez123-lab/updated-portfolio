@@ -32,7 +32,7 @@ const workHistory = [
 
 export default function WorkExperience() {
   return (
-    <div className=" bg-white py-24 px-6 relative font-sans">
+    <div id="about" className=" bg-white py-24 px-6 relative font-sans">
       <h2 className="text-5xl font-bold text-black text-center mb-24">
         My <span className="text-[#F17B3C]">Work Experience</span>
       </h2>

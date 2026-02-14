@@ -12,7 +12,7 @@ const services = [
 
 export default function ServicePage() {
   return (
-    <section className="relative min-h-screen rounded-[80px] md:rounded-[50px] bg-[#050505] text-white py-20 px-6 md:px-10 overflow-hidden font-sans -mt-[80px] shadow-2xl">
+    <section id="services" className="relative min-h-screen rounded-[80px] md:rounded-[50px] bg-[#050505] text-white py-20 px-6 md:px-10 overflow-hidden font-sans -mt-[80px] shadow-2xl">
 
       
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">

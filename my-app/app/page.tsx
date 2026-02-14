@@ -4,6 +4,8 @@ import Service from "@/components/Services/page"
 import Work from "@/components/Work/page"
 import Hireme from "@/components/Hireme/page"
 import Projects from "@/components/Projects/page"
+import Cta from "@/components/Cta/page"
+import Footer from "@/components/Footer/page"
 
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
    <Work/>
    <Hireme/>
    <Projects/>
+   <Cta/>
+   <Footer/>
    </>
   );
 }
