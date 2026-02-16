@@ -24,7 +24,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   // Smooth scroll handler
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     // Only apply to internal hash links
     if (href.startsWith("#")) {
       e.preventDefault();
