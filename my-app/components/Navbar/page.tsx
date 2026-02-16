@@ -107,9 +107,9 @@ export default function Navbar() {
               <div className="flex flex-col gap-4">
                 <p className="text-gray-400 text-xs">Based in [Your Location]</p>
                 <div className="flex gap-6">
-                  <a href="#" className="text-white hover:text-[#70A9FF] text-sm transition-colors">LinkedIn</a>
-                  <a href="#" className="text-white hover:text-[#70A9FF] text-sm transition-colors">GitHub</a>
-                  <a href="#" className="text-white hover:text-[#70A9FF] text-sm transition-colors">Twitter</a>
+                  <a href="https://www.linkedin.com/in/mufeez-692840211/" className="text-white hover:text-[#70A9FF] text-sm transition-colors">LinkedIn</a>
+                  <a href="https://github.com/mufeez123-lab" className="text-white hover:text-[#70A9FF] text-sm transition-colors">GitHub</a>
+                  <a href="https://wa.me/916362514956" className="text-white hover:text-[#70A9FF] text-sm transition-colors">Whatsapp</a>
                 </div>
               </div>
             </div>
