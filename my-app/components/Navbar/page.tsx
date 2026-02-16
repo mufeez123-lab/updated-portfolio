@@ -40,7 +40,7 @@ useEffect(() => {
         <div className="flex items-center gap-8 flex-1">
           <Link 
             href="/" 
-            className="bg-[#F17B3C] px-6 py-2 rounded-full font-medium whitespace-nowrap hover:bg-[#d96a2f] transition-colors"
+            className="bg-[#70A9FF] px-6 py-2 rounded-full font-medium whitespace-nowrap hover:bg-[#d96a2f] transition-colors"
           >
             Home
           </Link>
@@ -52,7 +52,7 @@ useEffect(() => {
         
         {/* Logo Section - Scale it slightly when scrolled */}
         <div className={`flex items-center gap-3 transition-transform duration-500 ${isScrolled ? 'scale-110' : 'scale-100'}`}>
-          <div className="bg-[#F17B3C] w-9 h-9 rounded-full flex items-center justify-center font-bold shadow-lg">
+          <div className="bg-[#70A9FF] w-9 h-9 rounded-full flex items-center justify-center font-bold shadow-lg">
             MD
           </div>
           <span className="font-bold tracking-tighter text-2xl uppercase">Mufeez dev</span>
@@ -64,7 +64,7 @@ useEffect(() => {
             <Link href="/resume.pdf" target='__blank' className="hover:text-white transition">Resume</Link>
             <Link href="#projects" className="hover:text-white transition">Project</Link>
           </div>
-          <Link href="#contact" className="hover:text-[#F17B3C] transition text-sm font-medium">Contact</Link>
+          <Link href="#contact" className="hover:text-[#70A9FF] transition text-sm font-medium">Contact</Link>
         </div>
       </div>
     </nav>

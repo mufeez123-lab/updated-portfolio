@@ -18,7 +18,7 @@ export default function ContactCTA() {
         {/* Responsive Heading */}
         <h2 data-aos="fade-up" className="text-3xl sm:text-4xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
           Have an Awesome Project <br className="hidden sm:block" /> 
-          Idea? <span className="text-[#F17B3C]">Let&apos;s Discuss</span>
+          Idea? <span className="text-[#70A9FF]">Let&apos;s Discuss</span>
         </h2>
         
         <div data-aos="fade-up" data-aos-delay="200">
@@ -28,7 +28,7 @@ export default function ContactCTA() {
             rel="noopener noreferrer"
             className="inline-block"
           >
-            <button className="bg-[#F17B3C] text-white px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold hover:bg-[#d96a2f] transition-all transform active:scale-95 shadow-lg shadow-orange-200">
+            <button className="bg-[#70A9FF] text-white px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold hover:bg-[#d96a2f] transition-all transform active:scale-95 shadow-lg shadow-orange-200">
               Contact Me
             </button>
           </a>
@@ -37,15 +37,15 @@ export default function ContactCTA() {
         {/* Responsive Stats/Trust Badges */}
         <div data-aos="fade-up" data-aos-delay="400" className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 md:gap-10 text-xs md:text-sm font-medium text-[#2D3E50]">
           <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full sm:bg-transparent sm:p-0">
-            <Star size={16} className="text-[#F17B3C]" fill="currentColor" /> 
+            <Star size={16} className="text-[#70A9FF]" fill="currentColor" /> 
             <span>4.5/5 Average Ratings</span>
           </div>
           <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full sm:bg-transparent sm:p-0">
-            <Award size={16} className="text-[#F17B3C]" /> 
+            <Award size={16} className="text-[#70A9FF]" /> 
             <span>800+ Github Contributions</span>
           </div>
           <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full sm:bg-transparent sm:p-0">
-            <ShieldCheck size={16} className="text-[#F17B3C]" /> 
+            <ShieldCheck size={16} className="text-[#70A9FF]" /> 
             <span>Certified Developer</span>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function ContactCTA() {
 
       {/* Rotating Marquee Bar - Enhanced for Mobile */}
       <div className="relative py-4 md:py-8">
-        <div className="bg-[#F17B3C] py-4 md:py-8 -rotate-2 scale-105 border-y-4 md:border-y-8 border-white overflow-hidden whitespace-nowrap flex shadow-xl">
+        <div className="bg-[#70A9FF] py-4 md:py-8 -rotate-2 scale-105 border-y-4 md:border-y-8 border-white overflow-hidden whitespace-nowrap flex shadow-xl">
           <div className="flex animate-marquee gap-8 md:gap-12 text-xl md:text-4xl font-bold text-white items-center">
             {["Web Design", "Fullstack Development", "Backend Development", "Landing Page", "Database", "React JS", "Node JS"].map((text, idx) => (
               <div key={idx} className="flex items-center gap-8 md:gap-12">

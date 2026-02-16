@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#0D0D0D] text-white pt-16 md:pt-24 pb-8 md:pb-12 px-6 md:px-20 rounded-t-[50px] md:rounded-t-[120px] overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-[#F17B3C]/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-[#70A9FF]/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-[#F9B17A]/5 blur-[100px] md:blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Brand Identity */}
           <div data-aos="fade-right" className="sm:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="bg-[#F17B3C] w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg flex-shrink-0">
+              <div className="bg-[#70A9FF] w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg flex-shrink-0">
                 MD
               </div>
               <span className="font-bold tracking-tighter text-2xl md:text-3xl uppercase font-sans">Mufeez dev</span>
@@ -47,7 +47,7 @@ export default function Footer() {
                 <Link target='_blank'
                   key={i} 
                   href={social.href}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#F17B3C] hover:border-[#F17B3C] transition-all duration-300 group"
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#70A9FF] hover:border-[#70A9FF] transition-all duration-300 group"
                 >
                   <span className="group-hover:scale-110 transition-transform">{social.icon}</span>
                 </Link>
@@ -59,10 +59,10 @@ export default function Footer() {
           <div data-aos="fade-up" className="space-y-4 md:space-y-6">
             <h4 className="text-lg md:text-xl font-bold font-sans">Quick Links</h4>
             <ul className="grid grid-cols-2 sm:grid-cols-1 gap-3 md:gap-4 text-gray-400 font-montserrat text-sm md:text-base">
-              <li><Link href="#home" className="hover:text-[#F17B3C] transition-colors">Home</Link></li>
-              <li><Link href="#services" className="hover:text-[#F17B3C] transition-colors">Services</Link></li>
-              <li><Link href="#about" className="hover:text-[#F17B3C] transition-colors">Experience</Link></li>
-              <li><Link href="#whyhireme" className="hover:text-[#F17B3C] transition-colors">Why Hire me</Link></li>
+              <li><Link href="#home" className="hover:text-[#70A9FF] transition-colors">Home</Link></li>
+              <li><Link href="#services" className="hover:text-[#70A9FF] transition-colors">Services</Link></li>
+              <li><Link href="#about" className="hover:text-[#70A9FF] transition-colors">Experience</Link></li>
+              <li><Link href="#whyhireme" className="hover:text-[#70A9FF] transition-colors">Why Hire me</Link></li>
             </ul>
           </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
             <p className="text-gray-400 font-montserrat text-sm md:text-base">Have a project in mind?</p>
             <Link 
               href="mailto:mufizmalar@gmail.com" 
-              className="inline-block bg-[#F17B3C] px-6 md:px-8 py-3 rounded-full font-bold hover:bg-[#d96a2f] transition-all shadow-lg shadow-orange-900/20 text-sm md:text-base"
+              className="inline-block bg-[#70A9FF] px-6 md:px-8 py-3 rounded-full font-bold hover:bg-[#d96a2f] transition-all shadow-lg shadow-orange-900/20 text-sm md:text-base"
             >
               Start a Project
             </Link>

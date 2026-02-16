@@ -28,7 +28,7 @@ export default function Hero() {
 
         {/* Heading */}
         <h1 data-aos="fade-up" className="text-4xl md:text-6xl lg:text-7xl text-black font-semibold leading-tight z-10">
-          I'm <span className="text-[#F17B3C]">Mufeez</span>, <br />
+          I'm <span className="text-[#70A9FF]">Mufeez</span>, <br />
           Software Developer 
         </h1>
 
@@ -41,7 +41,7 @@ export default function Hero() {
           {/* Portrait Image */}
           <div data-aos="fade-up" className="relative z-10 w-full max-w-[300px] md:max-w-[500px] lg:max-w-[600px] aspect-square">
             <Image 
-              src="/images/chairman1.png"
+              src="/images/myph.png"
               alt="Mufeez Portfolio"
               fill
               className="object-contain"
@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Floating Call to Action */}
           <div data-aos="fade-up" className="absolute bottom-5 md:bottom-10 left-1/2 -translate-x-1/2 z-30 flex items-center bg-white/20 backdrop-blur-md p-1.5 md:p-2 rounded-full border border-white/30 whitespace-nowrap scale-75 md:scale-100">
             <a href="/">
-              <button className="bg-[#F17B3C] font-montserrat text-white px-5 md:px-8 py-3 md:py-4 rounded-full flex items-center gap-2 font-medium text-sm md:text-base transition-transform hover:scale-105">
+              <button className="bg-[#70A9FF] font-montserrat text-white px-5 md:px-8 py-3 md:py-4 rounded-full flex items-center gap-2 font-medium text-sm md:text-base transition-transform hover:scale-105">
                 Portfolio <span className="text-lg">↗</span>
               </button>
             </a>

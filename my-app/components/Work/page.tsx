@@ -9,21 +9,28 @@ const workHistory = [
     period: "Sep 2024 - Nov 2024",
     role: "Software Development (Freelancer)",
     description: "Created Landing page for Jewellery business using Reactjs, Built Billing Software for Business purposes",
-    dotColor: "bg-[#F17B3C]"
+    dotColor: "bg-[#70A9FF]"
   },
   {
     company: "Hindustan Builders, Mangalore",
     period: "Jan 2025 - June 2025",
     role: "Website Development (Freelancer)",
     description: "Built Real estate Web Application Using React js and Nodejs with admin Panel for custom operation",
-    dotColor: "bg-[#F17B3C]"
+    dotColor: "bg-[#70A9FF]"
+  },
+   {
+    company: "Badger Scoop USA(Remote)",
+    period: "Jan 2025 - June 2025",
+    role: "Website Development (Freelancer)",
+    description: "Built a Cleaning Service Web Application Using Wordpress with custom plugins and themes, Integrated Payment Gateway for online transactions",
+    dotColor: "bg-[#70A9FF]"
   },
   {
     company: "Komquest Solutions",
     period: "July 2025 - Dec 2025",
     role: "React Js Developer",
     description: "Built React js websites for Manpower Companies overseas, Collaborated with Client, Understood the requirements",
-    dotColor: "bg-[#F17B3C]"
+    dotColor: "bg-[#70A9FF]"
   },
   {
     company: "GD Edu Tech",
@@ -45,7 +52,7 @@ export default function WorkExperience() {
   return (
     <div id="about" className="bg-white py-16 md:py-24 px-6 relative font-sans overflow-hidden">
       <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-bold text-black text-center mb-16 md:mb-24">
-        My <span className="text-[#F17B3C]">Work Experience</span>
+        My <span className="text-[#70A9FF]">Work Experience</span>
       </h2>
 
       <div className="relative max-w-6xl mx-auto">
@@ -66,7 +73,7 @@ export default function WorkExperience() {
               {/* Desktop: Right Aligned | Mobile: Left Aligned with padding for line */}
               <div className="pl-10 md:pl-0 md:text-right md:pr-16 w-full order-1 md:order-none">
                 <h3 className="text-2xl md:text-3xl font-bold text-[#1D2939] leading-tight">{item.company}</h3>
-                <p className="text-[#F17B3C] md:text-gray-400 mt-1 md:mt-2 font-semibold md:font-medium text-sm md:text-base">{item.period}</p>
+                <p className="text-[#70A9FF] md:text-gray-400 mt-1 md:mt-2 font-semibold md:font-medium text-sm md:text-base">{item.period}</p>
               </div>
 
               {/* Center Dot */}

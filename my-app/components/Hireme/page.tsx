@@ -24,7 +24,7 @@ export default function WhyHireMe() {
         >
           <div className="bg-[#F9B17A] w-full max-w-[300px] md:max-w-[350px] aspect-[3/4] rounded-[60px] md:rounded-[100px] relative overflow-hidden shadow-xl">
             <Image 
-              src="/images/1.png" 
+              src="/images/myph.png" 
               alt="Profile" 
               fill 
               className="object-cover object-top pt-6 md:pt-10"
@@ -36,7 +36,7 @@ export default function WhyHireMe() {
         {/* Right: Content */}
         <div className="space-y-6 text-center lg:text-left order-1 lg:order-2 flex flex-col items-center lg:items-start">
           <h2 data-aos="fade-up" data-aos-delay="100" className="text-3xl md:text-5xl font-bold text-[#2D3E50] leading-tight">
-            Why <span className="text-[#F17B3C]">Hire me?</span>
+            Why <span className="text-[#70A9FF]">Hire me?</span>
           </h2>
           
           <p data-aos="fade-up" data-aos-delay="200" className="text-gray-500 max-w-md leading-relaxed font-montserrat text-sm md:text-base">

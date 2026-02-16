@@ -50,7 +50,7 @@ export default function PortfolioCarousel() {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-16 gap-6">
         <h2 data-aos="fade-up" className="text-4xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
-          Lets have a look at <br /> my <span className="text-[#F17B3C]"> Recent Projects</span>
+          Lets have a look at <br /> my <span className="text-[#70A9FF]"> Recent Projects</span>
         </h2>
       </div>
 
@@ -80,7 +80,7 @@ export default function PortfolioCarousel() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
 
                 {/* Branding Text Over Image - Responsive Text sizes */}
-                <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold drop-shadow-2xl group-hover:text-[#F17B3C] transition-colors duration-300">
+                <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold drop-shadow-2xl group-hover:text-[#70A9FF] transition-colors duration-300">
                   {item.title}
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function PortfolioCarousel() {
           <div 
             key={index}
             className={`transition-all duration-300 rounded-full ${
-              index === selectedIndex ? "w-10 md:w-12 h-2 md:h-2.5 bg-[#F17B3C]" : "w-2 md:w-2.5 h-2 md:h-2.5 bg-gray-300"
+              index === selectedIndex ? "w-10 md:w-12 h-2 md:h-2.5 bg-[#70A9FF]" : "w-2 md:w-2.5 h-2 md:h-2.5 bg-gray-300"
             }`}
           />
         ))}
