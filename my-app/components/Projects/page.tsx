@@ -1,17 +1,19 @@
-"use client"
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useEffect, useState, useCallback } from "react"
+import { ExternalLink } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css"
 
 const portfolioItems = [
-  { id: 1, title: "Hindustan Builders", image: "/images/ss1.png" },
-  { id: 2, title: "Sky Diamond Dreams", image: "/images/ss2.png" },
-  { id: 3, title: "Prestige Events", image: "/images/ss3.png" },
-  { id: 4, title: "Badger Scoop", image: "/images/123.png" },
-  { id: 5, title: "Afera Plywood", image: "/images/12345.png" },
+  { id: 1, title: "Hindustan Builders", image: "/images/ss1.png", link: "https://hindustanbuilders.in" },
+  { id: 2, title: "Sky Diamond Dreams", image: "/images/ss2.png", link: "" },
+  { id: 3, title: "Prestige Events", image: "/images/ss3.png", link: "https://prestige-event.vercel.app/demo" },
+  { id: 4, title: "Badger Scoop", image: "/images/123.png", link: "https://badgerscoop.com" },
+  { id: 5, title: "Afera Plywood", image: "/images/12345.png", link: "https://aferaplywood.vercel.app/" },
 ];  
 
 export default function PortfolioCarousel() {
@@ -19,20 +21,19 @@ export default function PortfolioCarousel() {
 
   useEffect(() => { 
     AOS.init({
-      duration: 1500,
+      duration: 1000,
       once: true
     })
   }, [])
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true, 
-    align: 'start',
+    align: 'center', // Changed to center for a more premium look
     skipSnaps: false 
   }, [
-    Autoplay({ delay: 3000, stopOnInteraction: false })
+    Autoplay({ delay: 4000, stopOnInteraction: false })
   ]);
 
-  // Update dots when slide changes
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
@@ -45,60 +46,86 @@ export default function PortfolioCarousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id='projects' className="py-16 md:py-24 px-4 md:px-10 lg:px-20 max-w-7xl mx-auto font-sans overflow-hidden">
-      
-      {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-16 gap-6">
-        <h2 data-aos="fade-up" className="text-4xl md:text-6xl font-bold text-[#2D3E50] leading-tight">
-          Lets have a look at <br /> my <span className="text-[#70A9FF]"> Recent Projects</span>
-        </h2>
-      </div>
-
-      {/* Auto-Sliding Viewport */}
-      <div 
-        data-aos="fade-up" 
-        data-aos-delay="200" 
-        className="overflow-visible md:overflow-hidden cursor-grab active:cursor-grabbing" 
-        ref={emblaRef}
-      >
-        <div className="flex gap-4 md:gap-8">
-          {portfolioItems.map((item) => (
-            <div 
-              key={item.id} 
-              className="flex-[0_0_90%] md:flex-[0_0_85%] lg:flex-[0_0_75%] min-w-0"
-            >
-              <div className="relative h-[350px] md:h-[550px] rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl group">
-                {/* Portfolio Image */}
-                <Image 
-                  src={item.image} 
-                  alt={item.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
-                
-                {/* Overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
-
-                {/* Branding Text Over Image - Responsive Text sizes */}
-                <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold drop-shadow-2xl group-hover:text-[#70A9FF] transition-colors duration-300">
-                  {item.title}
-                </div>
-              </div>
-            </div>
-          ))}
+    <section id='projects' className="bg-[#080808] py-20 md:py-32 px-4 md:px-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header Section */}
+        <div className="mb-12 md:mb-20">
+          <h4 data-aos="fade-up" className="text-[#70A9FF] text-xs font-bold uppercase tracking-[0.3em] mb-4">Portfolio</h4>
+          <h2 data-aos="fade-up" data-aos-delay="100" className="text-4xl md:text-7xl font-black text-white leading-none uppercase tracking-tighter">
+            My <br /> <span className="text-[#70A9FF]">Works</span>
+          </h2>
         </div>
-      </div>
 
-      {/* Dynamic Pagination Dots */}
-      <div className="flex justify-center items-center gap-2 mt-10 md:mt-12">
-        {portfolioItems.map((_, index) => (
-          <div 
-            key={index}
-            className={`transition-all duration-300 rounded-full ${
-              index === selectedIndex ? "w-10 md:w-12 h-2 md:h-2.5 bg-[#70A9FF]" : "w-2 md:w-2.5 h-2 md:h-2.5 bg-gray-300"
-            }`}
-          />
-        ))}
+        {/* Carousel Viewport */}
+        <div 
+          data-aos="fade-up" 
+          data-aos-delay="200" 
+          className="overflow-visible cursor-grab active:cursor-grabbing" 
+          ref={emblaRef}
+        >
+          <div className="flex gap-6 md:gap-10">
+            {portfolioItems.map((item) => (
+              <div 
+                key={item.id} 
+                className="flex-[0_0_90%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0"
+              >
+                {/* Wrap the item in a Link */}
+                <Link target="_blank" href={item.link} className="block group relative h-[400px] md:h-[600px] rounded-[24px] md:rounded-[40px] overflow-hidden border border-white/5 shadow-2xl">
+                  
+                  {/* Project Image */}
+                  <Image 
+                    src={item.image} 
+                    alt={item.title} 
+                    fill 
+                    
+                    className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110 opacity-70 group-hover:opacity-100" 
+                  />
+                  
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500" />
+
+                  {/* Content Container */}
+                  <div className="absolute inset-0 p-8 md:p-16 flex flex-col justify-end">
+                    <div className="flex items-end justify-between translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <div>
+                        <p className="text-[#70A9FF] text-xs font-bold uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">View Project</p>
+                        <h3 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter">
+                          {item.title}
+                        </h3>
+                      </div>
+                      
+                      {/* Floating Link Icon */}
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center text-black scale-0 group-hover:scale-100 transition-transform duration-500 delay-100">
+                        <ExternalLink size={24} />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dynamic Pagination / Progress Bar */}
+        <div className="flex justify-between items-center mt-12 px-2">
+          <div className="flex gap-2">
+            {portfolioItems.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => emblaApi && emblaApi.scrollTo(index)}
+                className={`transition-all duration-500 rounded-full h-1.5 ${
+                  index === selectedIndex ? "w-12 bg-[#70A9FF]" : "w-4 bg-white/10 hover:bg-white/30"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          <div className="hidden md:block text-white/20 font-black text-2xl tracking-tighter uppercase italic">
+            0{selectedIndex + 1} / 0{portfolioItems.length}
+          </div>
+        </div>
       </div>
     </section>
   );
