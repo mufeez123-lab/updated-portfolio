@@ -109,6 +109,7 @@ export default function Navbar() {
                 <div className="flex gap-6">
                   <a href="https://www.linkedin.com/in/mufeez-692840211/" className="text-white hover:text-[#70A9FF] text-sm transition-colors">LinkedIn</a>
                   <a href="https://github.com/mufeez123-lab" className="text-white hover:text-[#70A9FF] text-sm transition-colors">GitHub</a>
+                  <a href="mailto:mufizmalar@gmail.com" className="text-white hover:text-[#70A9FF] text-sm transition-colors">Email</a>
                   <a href="https://wa.me/916362514956" className="text-white hover:text-[#70A9FF] text-sm transition-colors">Whatsapp</a>
                 </div>
               </div>
