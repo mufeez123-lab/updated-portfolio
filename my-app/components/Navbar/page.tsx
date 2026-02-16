@@ -105,7 +105,7 @@ export default function Navbar() {
             <div className={`mt-auto transition-all duration-700 delay-700 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
               <div className="h-[1px] w-full bg-white/10 mb-8" />
               <div className="flex flex-col gap-4">
-                <p className="text-gray-400 text-xs">Based in [Your Location]</p>
+                <p className="text-gray-400 text-xs">Based in Mangalore</p>
                 <div className="flex gap-6">
                   <a href="https://www.linkedin.com/in/mufeez-692840211/" className="text-white hover:text-[#70A9FF] text-sm transition-colors">LinkedIn</a>
                   <a href="https://github.com/mufeez123-lab" className="text-white hover:text-[#70A9FF] text-sm transition-colors">GitHub</a>
