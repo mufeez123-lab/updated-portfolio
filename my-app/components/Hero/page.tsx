@@ -36,7 +36,7 @@ export default function Hero() {
         <div className="relative mt-4 md:mt-[-40px] w-full flex flex-col items-center justify-center">
           
           {/* Decorative Orange Circle - Sized relative to viewport */}
-          <div data-aos="fade-up" className="absolute bottom-0 w-[90%] md:w-[600px] h-[45%] md:h-[300px] bg-[#F9B17A] rounded-t-full -z-0"></div>
+          <div data-aos="fade-up" className="absolute bottom-0 w-[90%] md:w-[601px] h-[45%] md:h-[300px] bg-[#F9B17A] rounded-t-full -z-0"></div>
     
           {/* Portrait Image */}
           <div data-aos="fade-up" className="relative z-10 w-full max-w-[300px] md:max-w-[500px] lg:max-w-[600px] aspect-square">
